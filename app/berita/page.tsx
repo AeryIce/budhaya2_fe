@@ -8,19 +8,31 @@ export default function BeritaPage() {
   return (
     <Container>
       <div className="py-10">
-        <h1 className="text-2xl font-semibold">Berita / Pengumuman</h1>
-        <p className="mt-2 text-black/70">
-          Listing + detail page, kategori minimal Berita & Pengumuman. 
-        </p>
+        <div className="max-w-3xl">
+          <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Berita & Pengumuman</div>
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900">Informasi terbaru sekolah</h1>
+          <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
+            Halaman ini dibuat lebih visual agar user langsung membayangkan bagaimana berita, pengumuman, dan dokumentasi sekolah akan tampil pada versi final.
+          </p>
+        </div>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {posts.map((p) => (
-            <Link key={p.slug} href={`/berita/${p.slug}`} className="rounded-xl border bg-white p-4 hover:border-black/40">
-              <div className="text-xs text-black/60">
-                {p.category} • {p.date}
+        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {posts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/berita/${post.slug}`}
+              className="group overflow-hidden rounded-[24px] border border-sky-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="aspect-[16/10] overflow-hidden">
+                <img alt={post.imageHint} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" src={post.imageUrl} />
               </div>
-              <div className="mt-1 font-semibold">{p.title}</div>
-              <div className="mt-1 text-sm text-black/70">{p.excerpt}</div>
+              <div className="p-5">
+                <div className="text-xs font-medium uppercase tracking-[0.16em] text-sky-700">
+                  {post.category} • {post.date}
+                </div>
+                <div className="mt-2 text-lg font-semibold text-slate-900">{post.title}</div>
+                <div className="mt-2 text-sm leading-7 text-slate-600">{post.excerpt}</div>
+              </div>
             </Link>
           ))}
         </div>
