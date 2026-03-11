@@ -77,7 +77,10 @@ export const schoolProfile: SchoolProfile = {
   email: "sma_bdh2@yahoo.co.id",
   website: "http://sma-bdh2.com",
   mapUrl: "https://www.google.com/maps/search/?api=1&query=SMA+Budhaya+2+Santo+Agustinus+Jakarta+Timur",
+
   logoUrl: "/logo-budhaya2.webp",
+
+
   heroImageUrl: "https://cdn-sekolah.annibuku.com/20103216/1.jpg",
   about:
     "Halaman ini disusun sebagai mockup demo website standar sekolah. Identitas inti sekolah, alamat, yayasan, dan nuansa visual sudah disesuaikan agar calon pengguna lebih mudah membayangkan bentuk website finalnya.",
