@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AddonFloatingChat } from "@/components/AddonFloatingChat";
 import { ScopeNotice } from "@/components/ScopeNotice";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "SMA Budhaya 2 Santo Agustinus — Demo Website Standar",
-  description: "Mockup demo website standar sekolah dengan profil, berita, agenda, galeri, unduhan, dan kontak.",
+  title: "SMA Budhaya 2 Santo Agustinus — Mockup Website Sekolah",
+  description: "Mockup revisi FE pasca meeting untuk SMA Budhaya 2 Santo Agustinus.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -16,7 +15,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         <main>{children}</main>
         <ScopeNotice />
-        <AddonFloatingChat />
       </body>
     </html>
   );
