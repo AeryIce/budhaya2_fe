@@ -1,7 +1,7 @@
 import { Container } from "@/components/Container";
 import { PageIntro } from "@/components/PageIntro";
 import { SubmenuTabs } from "@/components/SubmenuTabs";
-import { schoolProfile } from "@/data/mock";
+import { extracurricularMandatory, extracurricularOptions, schoolProfile } from "@/data/mock";
 
 export default function ProfilPage() {
   return (
@@ -10,7 +10,7 @@ export default function ProfilPage() {
         <PageIntro
           eyebrow="Profil"
           title="Profil Sekolah"
-          description="Halaman ini mempertahankan profil inti sekolah, lalu diberi arah visual yang lebih formal, lebih bersih, dan lebih terasa premium agar tetap layak dipakai sebagai website resmi."
+          description="Konten profil mulai disesuaikan dengan materi resmi sekolah agar mockup terasa lebih nyata, lebih formal, dan semakin siap dipakai sebagai acuan finalisasi website."
         />
         <SubmenuTabs
           items={[
@@ -39,8 +39,8 @@ export default function ProfilPage() {
                 <div className="mt-2 text-3xl font-semibold text-slate-900">{schoolProfile.accreditation}</div>
               </div>
               <div className="rounded-[24px] bg-gradient-to-br from-sky-50 to-white p-5">
-                <div className="text-sm font-semibold text-sky-900">Naungan</div>
-                <div className="mt-2 text-base font-semibold leading-7 text-slate-900">{schoolProfile.foundation}</div>
+                <div className="text-sm font-semibold text-sky-900">Status Sekolah</div>
+                <div className="mt-2 text-base font-semibold leading-7 text-slate-900">{schoolProfile.status}</div>
               </div>
             </div>
           </div>
@@ -61,33 +61,34 @@ export default function ProfilPage() {
           <div className="rounded-[32px] border border-white/80 bg-white/88 p-6 shadow-[0_24px_60px_-42px_rgba(15,23,42,0.35)] backdrop-blur-sm lg:col-span-1">
             <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Identitas</div>
             <div className="mt-4 space-y-3 text-sm leading-8 text-slate-600">
-              <p>
-                <span className="font-semibold text-slate-900">Alamat:</span> {schoolProfile.address}, {schoolProfile.city}
-              </p>
-              <p>
-                <span className="font-semibold text-slate-900">NPSN:</span> {schoolProfile.npsn}
-              </p>
-              <p>
-                <span className="font-semibold text-slate-900">Email:</span> {schoolProfile.email}
-              </p>
-              <p>
-                <span className="font-semibold text-slate-900">Telepon:</span> {schoolProfile.phone}
-              </p>
+              <p><span className="font-semibold text-slate-900">Alamat:</span> {schoolProfile.address}, {schoolProfile.city}</p>
+              <p><span className="font-semibold text-slate-900">NPSN:</span> {schoolProfile.npsn}</p>
+              <p><span className="font-semibold text-slate-900">Jenjang:</span> {schoolProfile.level}</p>
+              <p><span className="font-semibold text-slate-900">Kepala Sekolah:</span> {schoolProfile.principalName}</p>
+              <p><span className="font-semibold text-slate-900">Yayasan:</span> {schoolProfile.foundation}</p>
             </div>
           </div>
 
           <div className="rounded-[32px] border border-white/80 bg-white/88 p-6 shadow-[0_24px_60px_-42px_rgba(15,23,42,0.35)] backdrop-blur-sm lg:col-span-2">
             <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Visi</div>
-            <p className="mt-4 text-sm leading-8 text-slate-600 md:text-base">{schoolProfile.vision}</p>
+            <p className="mt-4 text-base italic leading-8 text-slate-700">“{schoolProfile.vision}”</p>
+            <div className="mt-5 flex flex-wrap gap-2.5">
+              {schoolProfile.values.map((value) => (
+                <span key={value} className="rounded-full border border-sky-200 bg-sky-50 px-3.5 py-1.5 text-sm text-sky-800">
+                  {value}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
           <div className="rounded-[32px] border border-white/80 bg-white/88 p-6 shadow-[0_24px_60px_-42px_rgba(15,23,42,0.35)] backdrop-blur-sm">
-            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Misi</div>
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Misi Sekolah</div>
             <ul className="mt-4 space-y-3 text-sm leading-8 text-slate-600 md:text-base">
-              {schoolProfile.missions.map((mission) => (
+              {schoolProfile.missions.map((mission, index) => (
                 <li key={mission} className="rounded-[24px] bg-gradient-to-r from-sky-50 to-white px-4 py-4">
+                  <span className="mr-2 font-semibold text-sky-800">{index + 1}.</span>
                   {mission}
                 </li>
               ))}
@@ -95,7 +96,7 @@ export default function ProfilPage() {
           </div>
 
           <div className="rounded-[32px] border border-white/80 bg-white/88 p-6 shadow-[0_24px_60px_-42px_rgba(15,23,42,0.35)] backdrop-blur-sm">
-            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Fasilitas & Nilai</div>
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Fasilitas Sekolah</div>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               {schoolProfile.facilities.map((facility) => (
                 <div key={facility} className="rounded-[22px] bg-gradient-to-r from-sky-50 to-white px-4 py-4 text-sm leading-7 text-slate-700">
@@ -103,11 +104,32 @@ export default function ProfilPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-5 flex flex-wrap gap-2.5">
-              {schoolProfile.values.map((value) => (
-                <span key={value} className="rounded-full border border-sky-200 bg-white px-3.5 py-1.5 text-sm text-sky-800">
-                  {value}
-                </span>
+          </div>
+        </div>
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          <div className="rounded-[32px] border border-white/80 bg-white/88 p-6 shadow-[0_24px_60px_-42px_rgba(15,23,42,0.35)] backdrop-blur-sm">
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Ekstrakurikuler Pilihan</div>
+            <div className="mt-4 grid gap-3">
+              {extracurricularOptions.map((item) => (
+                <div key={item.id} className="rounded-[22px] border border-sky-100 bg-white/90 px-4 py-4">
+                  <div className="text-base font-semibold text-slate-900">{item.name}</div>
+                  <div className="mt-1 text-sm leading-7 text-slate-600">Pendamping: {item.mentor}</div>
+                  <div className="text-sm leading-7 text-sky-800">Jadwal: {item.schedule}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[32px] border border-white/80 bg-white/88 p-6 shadow-[0_24px_60px_-42px_rgba(15,23,42,0.35)] backdrop-blur-sm">
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Ekstrakurikuler Wajib</div>
+            <div className="mt-4 grid gap-3">
+              {extracurricularMandatory.map((item) => (
+                <div key={item.id} className="rounded-[22px] border border-sky-100 bg-white/90 px-4 py-4">
+                  <div className="text-base font-semibold text-slate-900">{item.name}</div>
+                  <div className="mt-1 text-sm leading-7 text-slate-600">Pendamping: {item.mentor}</div>
+                  <div className="text-sm leading-7 text-sky-800">Jadwal: {item.schedule}</div>
+                </div>
               ))}
             </div>
           </div>

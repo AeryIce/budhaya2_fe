@@ -1,0 +1,23 @@
+<svg width="640" height="800" viewBox="0 0 640 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EAF3FF"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="80" y1="80" x2="560" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9ECFF"/>
+      <stop offset="1" stop-color="#C8E1FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" rx="36" fill="url(#bg)"/>
+  <rect x="28" y="28" width="584" height="744" rx="30" fill="white" stroke="#D7E7FA" stroke-width="2"/>
+  <rect x="72" y="72" width="496" height="496" rx="32" fill="url(#accent)"/>
+  <circle cx="320" cy="258" r="92" fill="#0F5E8C" fill-opacity="0.14"/>
+  <path d="M320 174C365.84 174 403 211.16 403 257C403 302.84 365.84 340 320 340C274.16 340 237 302.84 237 257C237 211.16 274.16 174 320 174ZM320 380C408.366 380 480 439.843 480 513.667V522H160V513.667C160 439.843 231.634 380 320 380Z" fill="#0F5E8C" fill-opacity="0.7"/>
+  <g opacity="0.95">
+    <rect x="196" y="618" width="248" height="40" rx="20" fill="#E8F3FF"/>
+    <text x="320" y="644" text-anchor="middle" fill="#0F5E8C" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="2.4">FOTO GURU</text>
+  </g>
+  <text x="320" y="704" text-anchor="middle" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600">Placeholder sementara</text>
+  <text x="320" y="736" text-anchor="middle" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-size="18">Silakan diganti oleh tim sekolah</text>
+</svg>

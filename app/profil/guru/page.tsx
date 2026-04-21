@@ -9,9 +9,10 @@ export default function ProfilGuruPage() {
       <div className="py-10">
         <PageIntro
           eyebrow="Profil"
-          title="Profil Guru"
-          description="Sesuai hasil meeting, profil guru ditampilkan sebagai galeri kartu. Saat kartu dipilih, detail guru muncul dalam panel bergaya popup agar alurnya mudah dibayangkan pada tahap mockup."
+          title="Profil Guru & Karyawan"
+          description="Halaman ini menampilkan guru terlebih dahulu, lalu karyawan sekolah di bagian bawah dengan jeda section yang jelas. Foto masih memakai placeholder sementara agar tim sekolah dapat mengganti foto resmi secara bertahap."
         />
+
         <SubmenuTabs
           items={[
             { label: "Profil Sekolah", href: "/profil" },
