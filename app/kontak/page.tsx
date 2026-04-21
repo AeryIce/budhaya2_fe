@@ -1,24 +1,26 @@
 import { Container } from "@/components/Container";
+import { PageIntro } from "@/components/PageIntro";
+import { SocialLinksRow } from "@/components/SocialLinksRow";
 import { schoolProfile } from "@/data/mock";
 
 export default function KontakPage() {
   return (
     <Container>
       <div className="py-10">
-        <div className="max-w-3xl">
-          <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Kontak</div>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900">Informasi kontak dan lokasi sekolah</h1>
-          <p className="mt-3 text-sm leading-7 text-slate-600 md:text-base">
-            Halaman ini memakai identitas sekolah yang nyata agar saat demo dibuka, user langsung melihat bentuk halaman kontak yang terasa lengkap dan meyakinkan.
-          </p>
-        </div>
+        <PageIntro
+          eyebrow="Kontak"
+          title="Informasi kontak sekolah"
+          description="Halaman kontak perlu sederhana, jelas, dan enak dibaca agar publik tidak bingung saat mencari alamat, email, nomor telepon, atau tautan lokasi sekolah."
+        />
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-[28px] border border-sky-100 bg-white p-6 shadow-sm">
-            <div className="text-lg font-semibold text-slate-900">{schoolProfile.fullName}</div>
-            <div className="mt-4 space-y-3 text-sm leading-7 text-slate-600 md:text-base">
+          <div className="rounded-[30px] border border-sky-100 bg-white p-6 shadow-sm md:p-8">
+            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Kontak Utama</div>
+
+            <div className="mt-5 space-y-4 text-sm leading-8 text-slate-600 md:text-base">
               <p>
-                <span className="font-semibold text-slate-900">Alamat:</span> {schoolProfile.address}, {schoolProfile.city}, {schoolProfile.province} {schoolProfile.postalCode}
+                <span className="font-semibold text-slate-900">Alamat:</span> {schoolProfile.address}, {schoolProfile.city},{" "}
+                {schoolProfile.province} {schoolProfile.postalCode}
               </p>
               <p>
                 <span className="font-semibold text-slate-900">Telepon:</span> {schoolProfile.phone}
@@ -31,24 +33,48 @@ export default function KontakPage() {
               </p>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                className="rounded-full bg-sky-900 px-4 py-2 text-sm font-semibold text-white"
-                href={schoolProfile.mapUrl}
-                rel="noreferrer"
-                target="_blank"
-              >
-                Buka Google Maps
-              </a>
-              <a className="rounded-full border border-sky-200 px-4 py-2 text-sm font-semibold text-sky-800" href={`mailto:${schoolProfile.email}`}>
-                Kirim Email
-              </a>
+            <a
+              href={schoolProfile.mapUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="group mt-6 inline-flex items-center gap-3 rounded-full border border-sky-200 bg-white px-4 py-2.5 text-sm font-semibold !text-sky-900 shadow-[0_16px_34px_-26px_rgba(12,74,110,0.28)] transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50"
+            >
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-sky-900 !text-white shadow-[0_10px_24px_-18px_rgba(12,74,110,0.55)] transition group-hover:bg-sky-800">
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  className="h-4.5 w-4.5 fill-none stroke-current stroke-[2]"
+                >
+                  <path d="M12 21s6-5.686 6-11a6 6 0 1 0-12 0c0 5.314 6 11 6 11Z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </span>
+
+              <span className="flex flex-col items-start leading-tight">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.16em] !text-sky-600">
+                  Google Maps
+                </span>
+                <span className="text-sm font-semibold !text-slate-800">Lihat Rute ke Sekolah</span>
+              </span>
+
+              <span className="ml-1 text-sm !text-sky-700 transition group-hover:translate-x-0.5">↗</span>
+            </a>
+
+            <div className="mt-6 border-t border-sky-100 pt-6">
+              <div className="text-sm font-semibold text-slate-900">Sosial media sekolah</div>
+              <div className="mt-4">
+                <SocialLinksRow />
+              </div>
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[28px] border border-sky-100 bg-white p-3 shadow-sm">
-            <div className="aspect-[16/10] overflow-hidden rounded-[22px]">
-              <img alt="Penanda lokasi dan lingkungan SMA Budhaya 2 Santo Agustinus" className="h-full w-full object-cover" src="https://cdn-sekolah.annibuku.com/20103216/3.jpg" />
+          <div className="overflow-hidden rounded-[30px] border border-sky-100 bg-white p-3 shadow-sm">
+            <div className="aspect-[4/3] overflow-hidden rounded-[24px]">
+              <img
+                alt="Lingkungan sekolah"
+                className="h-full w-full object-cover"
+                src={schoolProfile.heroImageUrl}
+              />
             </div>
           </div>
         </div>
