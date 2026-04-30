@@ -9,7 +9,9 @@ export default function GaleriPage() {
         <PageIntro
           eyebrow="Galeri"
           title="Galeri dibagi menjadi tiga bagian"
-          description="Sesuai brief terbaru, galeri dipecah menjadi Galeri Event, Galeri Ekstrakurikuler, dan Galeri Fasilitas. Caption juga ditampilkan agar foto tidak terasa kosong."
+
+          description="Sesuai brief terbaru, galeri dipecah menjadi Galeri Event, Galeri Ekstrakurikuler, dan Galeri Fasilitas. Pada revisi ini, sebagian foto asli sekolah sudah mulai dipakai sebagai base visual agar mockup terasa lebih nyata."
+
         />
 
         <div className="mt-6 rounded-[28px] border border-sky-100 bg-white p-4 shadow-sm md:flex md:items-center md:justify-between md:gap-4">
