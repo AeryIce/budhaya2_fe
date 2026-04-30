@@ -18,7 +18,7 @@ export default function HomePage() {
 
             <div className="relative flex h-full flex-col">
               <div className="inline-flex w-fit rounded-full border border-white/22 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] !text-white/95">
-                Website Sekolah • Mockup FE Revisi
+                Website Sekolah • Mockup FE Revisi + Foto Asli
               </div>
 
               <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight tracking-tight !text-white md:text-6xl">
@@ -95,7 +95,7 @@ export default function HomePage() {
                   </div>
                   <div className="mt-3 text-2xl font-semibold">Radin Inten, Duren Sawit</div>
                   <div className="mt-2 max-w-md text-sm leading-7 text-white/82">
-                    Area visual ini cocok dipakai untuk foto gedung utama, suasana halaman, atau momen ikonik sekolah.
+                    Area visual ini mulai memakai foto asli sekolah agar mockup terasa lebih nyata saat dipresentasikan.
                   </div>
                 </div>
               </div>
@@ -174,13 +174,14 @@ export default function HomePage() {
                     alt={principalGreeting.name}
                     className="h-[470px] w-full object-cover object-center"
                     src={principalGreeting.photoUrl}
+                    loading="lazy"
                   />
                 </div>
               </div>
 
               <div className="flex h-full flex-col rounded-[28px] bg-gradient-to-br from-sky-50 to-white p-5">
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700">
-                  Contoh Visual Profil Pimpinan
+Profil Kepala Sekolah
                 </div>
                 <div className="mt-2 text-2xl font-semibold leading-tight text-slate-900">{principalGreeting.name}</div>
                 <div className="mt-1 text-sm text-slate-600">{principalGreeting.role}</div>
@@ -254,6 +255,7 @@ export default function HomePage() {
                     alt={post.imageHint}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                     src={post.imageUrl}
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-5">
@@ -276,8 +278,7 @@ export default function HomePage() {
             Galeri dipecah menjadi tiga kategori
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-8 text-slate-600">
-            Pendekatan ini bikin pengunjung langsung paham konteks isi galeri tanpa merasa sedang melihat tumpukan foto
-            campur aduk.
+            Pendekatan ini bikin pengunjung langsung paham konteks isi galeri tanpa merasa sedang melihat tumpukan foto campur aduk.
           </p>
         </div>
 
@@ -293,6 +294,7 @@ export default function HomePage() {
                   alt={category.title}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   src={category.coverImageUrl}
+                  loading="lazy"
                 />
               </div>
               <div className="p-5">

@@ -9,7 +9,7 @@ export default function GaleriPage() {
         <PageIntro
           eyebrow="Galeri"
           title="Galeri dibagi menjadi tiga bagian"
-          description="Sesuai brief terbaru, galeri dipecah menjadi Galeri Event, Galeri Ekstrakurikuler, dan Galeri Fasilitas. Caption juga ditampilkan agar foto tidak terasa kosong."
+          description="Sesuai brief terbaru, galeri dipecah menjadi Galeri Event, Galeri Ekstrakurikuler, dan Galeri Fasilitas. Pada revisi ini, sebagian foto asli sekolah sudah mulai dipakai sebagai base visual agar mockup terasa lebih nyata."
         />
 
         <div className="mt-6 rounded-[28px] border border-sky-100 bg-white p-4 shadow-sm md:flex md:items-center md:justify-between md:gap-4">
@@ -37,7 +37,7 @@ export default function GaleriPage() {
                 {category.photos.map((photo) => (
                   <div key={photo.id} className="overflow-hidden rounded-[26px] border border-sky-100 bg-white shadow-sm">
                     <div className="aspect-[4/3] overflow-hidden bg-slate-100">
-                      <img alt={photo.caption} className="h-full w-full object-cover" src={photo.imageUrl} />
+                      <img alt={photo.caption} className="h-full w-full object-cover" src={photo.imageUrl} loading="lazy" />
                     </div>
                     <div className="p-5">
                       <div className="text-sm font-semibold text-slate-900">Caption Foto</div>
