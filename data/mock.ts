@@ -281,7 +281,7 @@ export const teachers: Teacher[] = [
     name: "Drs. Leocardia Suparman",
     role: "Tenaga Pendidik",
     subject: "Mata pelajaran akan menyesuaikan data resmi sekolah",
-    photoUrl: "/images/principal/drs-leocardia-suparman-mm.webp",
+    photoUrl: "/images/teachers/drs-leocardia-suparman.webp",
     education: "Data pendidikan akan disesuaikan bersama pihak sekolah",
     focus: ["Pembinaan siswa", "Pendampingan belajar", "Penguatan karakter"],
     shortBio: "Profil singkat Drs. Leocardia Suparman akan menyesuaikan data resmi sekolah.",
