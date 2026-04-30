@@ -5,6 +5,9 @@ export type SchoolProfile = {
   foundation: string;
   accreditation: string;
   npsn: string;
+  status: string;
+  level: string;
+  principalName: string;
   address: string;
   district: string;
   city: string;
@@ -88,8 +91,33 @@ export type DownloadItem = {
   id: string;
   title: string;
   description: string;
-  fileType: "PDF";
+  fileType: "PDF" | "PNG";
   updatedAt: string;
+  previewImageUrl?: string;
+  fileUrl?: string;
+};
+
+export type ExtracurricularItem = {
+  id: string;
+  name: string;
+  mentor: string;
+  schedule: string;
+};
+
+export type WorkItem = {
+  id: string;
+  title: string;
+  creator: string;
+  summary: string;
+};
+
+export type WorkCategory = {
+  id: string;
+  title: string;
+  tone: string;
+  description: string;
+  notes: string[];
+  items: WorkItem[];
 };
 
 export type WorkItem = {
@@ -115,16 +143,18 @@ export const schoolProfile: SchoolProfile = {
   foundation: "Yayasan Perguruan Budhaya",
   accreditation: "A",
   npsn: "20103216",
+  status: "Swasta",
+  level: "Sekolah Menengah Atas (SMA)",
+  principalName: "Drs. Leocardia Suparman, M.M",
   address: "Jl. Radin Inten II, Buaran, Duren Sawit",
   district: "Duren Sawit",
   city: "Jakarta Timur",
   province: "DKI Jakarta",
   postalCode: "13440",
   phone: "021-8630746",
-  email: "sma_bdh2@yahoo.co.id",
+  email: "smabudhaya2stagustinus@gmail.com",
   website: "http://sma-bdh2.com",
-  mapUrl: "https://www.google.com/maps/search/?api=1&query=SMA+Budhaya+2+Santo+Agustinus+Jakarta+Timur",
-
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=SMA+Budhaya+II+Santo+Agustinus+Jakarta+Timur",
   logoUrl: "/logo-budhaya2.webp",
 
 
@@ -133,17 +163,28 @@ export const schoolProfile: SchoolProfile = {
     "Mockup ini disusun sebagai gambaran website sekolah yang lebih dekat dengan kebutuhan nyata pihak sekolah setelah sesi presentasi dan diskusi lanjutan, sekaligus mulai memakai foto asli dari pihak sekolah pada beberapa bagian penting.",
   vision: "Menjadi komunitas belajar yang unggul, berkarakter, dan adaptif terhadap perkembangan zaman.",
   missions: [
-    "Menghadirkan pembelajaran yang terarah, aktif, dan relevan dengan kebutuhan peserta didik.",
-    "Menumbuhkan disiplin, integritas, kepedulian, dan semangat pelayanan dalam kehidupan sekolah.",
-    "Mendorong kolaborasi yang sehat antara sekolah, orang tua, dan lingkungan sekitar.",
+    "Menumbuhkan peserta didik yang beriman dan bertakwa kepada Tuhan Yang Maha Esa dalam kehidupan sehari-hari.",
+    "Membangun rasa cinta tanah air melalui kegiatan yang menumbuhkan nasionalisme dan kepedulian terhadap bangsa dan negara.",
+    "Mengembangkan kemampuan berpikir kritis dalam menyelesaikan masalah secara logis dan bertanggung jawab.",
+    "Mendorong peserta didik untuk menjadi individu yang kreatif dalam mengekspresikan ide, karya, dan solusi inovatif.",
+    "Menanamkan nilai kolaborasi dalam proses belajar dan kehidupan sosial melalui kerja sama yang sehat dan produktif.",
+    "Membina kemandirian peserta didik agar mampu mengambil keputusan dan bertanggung jawab atas tindakannya.",
+    "Mendorong gaya hidup sehat secara fisik dan mental melalui kebiasaan positif dan lingkungan yang mendukung.",
+    "Mengasah keterampilan komunikasi yang efektif, santun, dan membangun baik secara lisan maupun tulisan.",
   ],
-  values: ["Iman", "Karakter", "Disiplin", "Kolaborasi", "Pelayanan"],
+  values: [
+    "Cerdas dalam berpikir",
+    "Tulus dalam bertindak",
+    "Tangguh menghadapi tantangan",
+    "Setia kepada Tuhan dan bangsa",
+  ],
   facilities: [
     "Ruang kelas dan area belajar yang tertata",
     "Dokumentasi kegiatan sekolah yang mudah dipublikasi",
     "Pusat informasi dan unduhan resmi sekolah",
     "Galeri sekolah dengan caption yang memberi konteks",
   ],
+  highlights: ["Berkarakter Pancasila", "Spiritualitas Santo Agustinus", "Informatif", "Mudah diakses"],
 };
 
 export const socialLinks: SocialLink[] = [

@@ -3,6 +3,8 @@ import { PageIntro } from "@/components/PageIntro";
 import { downloads } from "@/data/mock";
 
 export default function UnduhanPage() {
+  const calendar = downloads[0];
+
   return (
     <Container>
       <div className="py-10">
@@ -27,7 +29,7 @@ export default function UnduhanPage() {
                 </button>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </Container>
